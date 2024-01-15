@@ -1,0 +1,39 @@
+window.addEventListener('hashchange',navigator,false);
+window.addEventListener('DOMContentLoaded',navigator,false);
+
+function navigator(){
+    console.log({location});
+
+    if(location.hash.startsWith('#trends')){
+        trendsPage();
+    } else if(location.hash.startsWith('#search=')){
+        searchPage();
+    } else if(location.hash.startsWith('#movie=')){
+        movieDetailsPage();
+    } else if(location.hash.startsWith('#category=')){
+        categoriesPage();
+    } else{
+        homePage();
+    }
+    location.hash;
+}
+
+function homePage(){
+    console.log('Home!!!');
+}
+
+function searchPage(){
+    console.log('Search!');
+}
+
+function movieDetailsPage(){
+    console.log('Movie!');
+}
+
+function trendsPage(){
+    console.log('Estamos en trends');
+}
+
+function categoriesPage(){
+    console.log('Category!');
+}
