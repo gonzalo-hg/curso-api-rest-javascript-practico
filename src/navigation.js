@@ -26,7 +26,9 @@ function navigator() {
     } else {
         homePage();
     }
-    location.hash;
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+    // location.hash;
 }
 
 function homePage() {
@@ -97,7 +99,7 @@ function trendsPage() {
 }
 
 function categoriesPage() {
-    console.log('Category!');
+    console.log('Categories!');
     headerSection.classList.add('header-container--long');
     headerSection.style.brackground = '';
     arrowBtn.classList.remove('inactive');
@@ -106,8 +108,15 @@ function categoriesPage() {
     headerCategoryTitle.classList.remove('inactive');
     searchForm.classList.add('inactive');
 
-    trendingPreviewSection.classList.add('remove');
-    categoriesPreviewSection.classList.add('remove');
+    trendingPreviewSection.classList.add('inactive');
+    categoriesPreviewSection.classList.add('inactive');
     genericSection.classList.remove('inactive');
     movieDetailSection.classList.add('inactive');
+
+    const [_,categoryData] = location.hash.split('=');
+    const [categodyId,categoryName] = categoryData.split('-');
+
+    headerCategoryTitle.innerHTML = categoryName;
+
+    getMoviesByCategory(categodyId);
 }
