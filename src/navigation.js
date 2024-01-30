@@ -3,12 +3,12 @@ searchFormBtn.addEventListener('click', () =>{
 });
 
 trendingBtn.addEventListener('click', () =>{
-    location.hash = '#trends=';
+    location.hash = '#trends';
 });
 
 arrowBtn.addEventListener('click', () => {
     history.back();
-    location.hash = '#home';
+    // location.hash = '#home';
 })
 window.addEventListener('hashchange', navigator, false);
 window.addEventListener('DOMContentLoaded', navigator, false);
@@ -42,8 +42,8 @@ function homePage() {
     headerTitle.classList.remove('inactive');
     searchForm.classList.remove('inactive');
 
-    trendingPreviewSection.classList.remove('remove');
-    categoriesPreviewSection.classList.remove('remove');
+    trendingPreviewSection.classList.remove('inactive');
+    categoriesPreviewSection.classList.remove('inactive');
     genericSection.classList.add('inactive');
     movieDetailSection.classList.add('inactive');
 
@@ -61,8 +61,8 @@ function searchPage() {
     headerCategoryTitle.classList.add('inactive');
     searchForm.classList.remove('inactive');
 
-    trendingPreviewSection.classList.add('remove');
-    categoriesPreviewSection.classList.add('remove');
+    trendingPreviewSection.classList.add('inactive');
+    categoriesPreviewSection.classList.add('inactive');
     genericSection.classList.remove('inactive');
     movieDetailSection.classList.add('inactive');
 
@@ -115,7 +115,7 @@ function trendsPage() {
 
 function categoriesPage() {
     console.log('Categories!');
-    headerSection.classList.add('header-container--long');
+    headerSection.classList.remove('header-container--long');
     headerSection.style.brackground = '';
     arrowBtn.classList.remove('inactive');
     arrowBtn.classList.remove('header-arrow--white');
